@@ -1,10 +1,14 @@
 package cl.people.Ejercicio.exceptions;
 
-public class SNotFoundException extends RuntimeException {
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.ResponseStatus;
+
+@ResponseStatus(value = HttpStatus.NOT_FOUND)
+public class SNotFoundException extends Exception {
 	
-	static final long serialVersionUID = 4L;
+	public static final long serialVersionUID = 1L;
 	
-	public SNotFoundException(String error) {
-		super(error);
+	public SNotFoundException(String message) {
+		super(message);
 	}
 }

@@ -5,6 +5,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 import cl.people.Ejercicio.courses.Course;
+import cl.people.Ejercicio.validation.AgeConst;
 import cl.people.Ejercicio.validation.RutConst;
 
 @Entity
@@ -15,11 +16,11 @@ public class Student {
 	private String rut;
 	private String name;
 	private String lastName;
-	private int age;
+	@AgeConst
+	private Integer age;
 	
 	@ManyToOne // a student can attend many courses
 	private Course course;
-
 	public Student() {
 
 	}

@@ -2,6 +2,7 @@ package cl.people.Ejercicio.validation;
 
 public class Validation {
 
+	//This method validate a chilean rut by the dv.
 	public static boolean validateRut(String rut) {
 		boolean valid = false;
 
@@ -28,5 +29,21 @@ public class Validation {
 
 		return valid;
 
+	}
+
+	// method that validates if the student age entered is bigger than 17
+	public static boolean validateAge(Integer age) {
+
+		boolean valid = false;
+
+		try {
+			if (age > 18) {
+				valid = true;
+			}
+		} catch (java.lang.NumberFormatException e1) {
+		} catch (Exception e) {
+		}
+
+		return valid;
 	}
 }
