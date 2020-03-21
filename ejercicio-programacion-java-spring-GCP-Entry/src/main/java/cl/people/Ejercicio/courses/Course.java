@@ -1,8 +1,10 @@
 package cl.people.Ejercicio.courses;
 
+import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.validation.constraints.Size;
 
+@Entity
 public class Course {
 	
 	@Id
@@ -12,7 +14,7 @@ public class Course {
 	private String name;
 
 	public Course() {
-		super();
+
 	}
 
 	public Course(String code, String name) {
@@ -36,9 +38,5 @@ public class Course {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
-	
-	
-	
 
 }

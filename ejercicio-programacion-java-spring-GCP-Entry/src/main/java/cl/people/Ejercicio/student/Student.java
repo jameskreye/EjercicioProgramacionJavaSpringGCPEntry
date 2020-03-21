@@ -5,11 +5,13 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 import cl.people.Ejercicio.courses.Course;
+import cl.people.Ejercicio.validation.RutConst;
 
 @Entity
 public class Student {
 	
 	@Id
+	@RutConst
 	private String rut;
 	private String name;
 	private String lastName;
@@ -19,7 +21,7 @@ public class Student {
 	private Course course;
 
 	public Student() {
-		super();
+
 	}
 
 	public Student(String rut, String name, String lastName, int age, String courseId) {
@@ -71,9 +73,6 @@ public class Student {
 	public void setCourse(Course course) {
 		this.course = course;
 	}
-	
-	
-	
-	
+		
 
 }

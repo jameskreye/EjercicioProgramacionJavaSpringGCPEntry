@@ -21,8 +21,8 @@ public class CourseService {
 	}
 	
 	//method that return a specific course by its id from the DDBB
-	public Optional<Course> getCoursebyId(String id) {
-		return courseRepository.findById(id);
+	public Optional<Course> getCoursebyId(String code) {
+		return courseRepository.findById(code);
 	}
 
 	//method that add a course to the database
@@ -31,13 +31,13 @@ public class CourseService {
 	}
 	
 	//method that update a course in the DDBB
-	public void updateCoursebyId(String id, Course course) {
+	public void updateCoursebyId(String code, Course course) {
 		List<Course> courses = new ArrayList<>();
 		courseRepository.findAll().forEach(courses::add);
 		
 		for(int i = 0; i < courses.size(); i++) {
 			Course cs = courses.get(i);
-			if(cs.getCode().equals(id)) {
+			if(cs.getCode().equals(code)) {
 				courses.set(i, course);
 				return;
 			}
@@ -45,8 +45,8 @@ public class CourseService {
 	}
 	
 	//method that delete a course from the DDBB by its id
-	public void deleteCoursebyId(String id) {
-		courseRepository.deleteById(id);
+	public void deleteCoursebyId(String code) {
+		courseRepository.deleteById(code);
 	}
 	
 }

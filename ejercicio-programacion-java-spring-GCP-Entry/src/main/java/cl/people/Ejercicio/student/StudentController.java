@@ -19,14 +19,14 @@ public class StudentController {
 	private StudentService studentService;
 	
 	
-	@RequestMapping("/courses/{id}/students") 
-	public List<Student> getAllStudents(@PathVariable String id) {
-		return studentService.getAllStudents(id);
+	@RequestMapping("/courses/{rut}/students") 
+	public List<Student> getAllStudents(@PathVariable String rut) {
+		return studentService.getAllStudents(rut);
 	}
 	
-	@RequestMapping("/courses/{courseId}/student/{id}")
-	public Optional<Student> getStudent(@PathVariable String id) {
-		return studentService.getStudent(id);
+	@RequestMapping("/courses/{courseId}/student/{rut}")
+	public Optional<Student> getStudent(@PathVariable String rut) {
+		return studentService.getStudent(rut);
 	}
 	
 	//Post verb here to add student
@@ -37,16 +37,16 @@ public class StudentController {
 	}
 	
 	//Put verb to update a student infos
-	@RequestMapping(method = RequestMethod.PUT, value="/courses/{courseId}/students/{id}")
-	public void updateStudent(@RequestBody Student student, @PathVariable String courseId, @PathVariable String id) {
-		studentService.updateStudent(id, student);	
+	@RequestMapping(method = RequestMethod.PUT, value="/courses/{courseId}/students/{rut}")
+	public void updateStudent(@RequestBody Student student, @PathVariable String courseId, @PathVariable String rut) {
+		studentService.updateStudent(rut, student);	
 	}
 	
 	
 	//Delete verb to delete a student in the DDBB
-	@RequestMapping(method = RequestMethod.DELETE, value = "/courses/{courseId}/students/{id}")
-	public void deleteStudent(@PathVariable String id) {
-		studentService.deleteStudent(id);
+	@RequestMapping(method = RequestMethod.DELETE, value = "/courses/{courseId}/students/{rut}")
+	public void deleteStudent(@PathVariable String rut) {
+		studentService.deleteStudent(rut);
 	}
 	
 	
